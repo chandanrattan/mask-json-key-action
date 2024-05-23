@@ -1,24 +1,15 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: 'heart'
-  color: 'red'
-
-# Define your inputs here.
+name: "Mask Token Action"
+description: "Masks a token in the input JSON file"
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  json_file:
+    description: "Path to the JSON file"
     required: true
-    default: '1000'
-
-# Define your outputs here.
+  token_key:
+    description: "The key of the token to mask"
+    required: true
 outputs:
-  time:
-    description: 'Your output description here'
-
+  masked_json:
+    description: "The JSON with the masked token"
 runs:
   using: node20
   main: dist/index.js
